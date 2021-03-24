@@ -29,12 +29,10 @@
 
           <span
             class="title"
-            v-on:keydown.enter="updateTask($event, todo)"
             v-bind:class="{ completed: todo.completed }"
             >{{ todo.name }}
           </span>
           <button id="btn" v-on:click="removetodo(index)">Delet</button>
-          <!--<button v-on:click="updateTask($event,todo)">Edit</button> !-->
         </li>
       </ul>
     </div>
@@ -75,13 +73,6 @@ export default {
         (this.newTodo = ""), this.nextTodo++;
       }
     },
-    /*
-    updateTask(e, todo) {
-      e.preventDefault();
-      todo.name = e.target.innerText;
-      e.target.blur();
-    },
-*/
     completetask(todo) {
       todo.completed = !todo.completed;
     },
